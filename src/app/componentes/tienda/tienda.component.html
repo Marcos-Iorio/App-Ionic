@@ -1,0 +1,16 @@
+<ion-select ([ngModel])="filtros" name="filtros" id="filtros" (ionChange)="obtenerProductos($event)">
+  <ion-select-option value="0" id="0" default selected>Selecciona una opción</ion-select-option>
+  <ion-select-option *ngFor="let item of categorias" [value]="item.nombre_cat" [id]="item.idCategoria">
+    {{item.nombre_cat}}
+  </ion-select-option>
+</ion-select>
+
+<!-- <div class="boton-agregar">
+<ion-button id="boton-agregar" aria-label="Example icon button with a bookmark icon">
+  <mat-icon>add</mat-icon>
+</ion-button>
+</div> -->
+
+<app-productos [productos]="productos"></app-productos>
+
+

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" placeholder="Nombre" [(ngModel)]="nombre" name="nombre" id="nameL"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" placeholder="Contraseña" id="passL" [(ngModel)]="password" name="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" class="boton-login" expand="block" (click)="login()">Iniciar Sesión</ion-button>
+      </ion-col>
+    </ion-row>
+  <br>
+  <div>¿No tenes cuenta? creá una</div>
+  <br>
+  <ion-row>
+    <ion-col>
+      <ion-button [routerLink]="['/registro']" color="danger" class="boton-login" expand="block" routerDirection="forward">Registrarse</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

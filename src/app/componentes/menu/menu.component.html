@@ -1,0 +1,22 @@
+<ion-menu side="start" menuId="first" contentId="content" type="push">  
+    <ion-header>  
+      <ion-toolbar color="dark">  
+        <ion-title>Menu</ion-title>  
+      </ion-toolbar>   
+    </ion-header>  
+    <ion-content color="light">  
+      <ion-menu-toggle auto-hide="true">
+        <ion-item [routerLink]="['/inicio']" routerDirection="forward">Inicio</ion-item>
+        <ion-item [routerLink]="['/tienda']" routerDirection="forward">Productos</ion-item>
+        <ion-item [routerLink]="['/#']" routerDirection="forward">Sobre Nosotros</ion-item>
+        <ion-item [routerLink]="['/#']" routerDirection="forward">Contactate</ion-item>
+        <br><br>
+        <div *ngIf="(authService.authenticated$ | async) === false">
+          <ion-item [routerLink]="['/login']" routerDirection="forward">Iniciar Sesión</ion-item>
+        </div>
+        <div *ngIf = "(authService.authenticated$ | async) === true">
+        <ion-item (click)="logOut()" class="menu__link r-link text-underlined" name="Cerrar sesión">Cerrar Sesión</ion-item>
+        </div>
+      </ion-menu-toggle>   
+    </ion-content>   
+  </ion-menu>
