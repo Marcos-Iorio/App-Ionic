@@ -33,7 +33,7 @@ export class ProdService {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    return this.http.put("http://localhost:8080/productos/editar", producto)
+    return this.http.put("https://edi-iorio-back.herokuapp.com/productos/editar", producto)
   }
 
 }

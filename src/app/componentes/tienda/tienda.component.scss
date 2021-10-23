@@ -12,30 +12,18 @@ ion-select-option{
     border: none;
 }
 
-/* .boton-agregar{
-    position: fixed;
-    right: 40px;
-    bottom: 25px;
+div.spinner-grow{
+    width: 3em;
+    height: 3em;
+    color: #334756;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
 }
 
-ion-button#boton-agregar{
-    border-radius: 50%;
-    background: rgb(11, 201, 11);
-    box-shadow: 2px 0px 6px 0px black;
-    border: none;
-    width: 50px;
-    height: 50px;
-    color: white;
-    transition: ease .5s;
+div.spinner-container{
+    position: absolute;
+    top: 45%;
+    left: 45%;
 }
 
-ion-button#boton-agregar:hover{
-    background: rgb(5, 168, 5);
-    transition: ease .5s;
-    border-radius: 25%;
-    border: none;
-} */
-
-/* .mat-icon{
-    margin-top: 3px;
-} */

@@ -24,11 +24,13 @@ export class EditarprodComponent implements OnInit {
   }
   modificarProd(){
     const producto = {id: this.idProd, nombre: this.nombreProd, stock:this.stock, precio: this.precio}
+    console.log(producto)
     this.prodService.EditarProducto(producto).subscribe( data => {
       let datos = Object.values(data);
       if(datos[0] == true){
         console.log(datos[1])
         this.router.navigateByUrl('/tienda');
+        window.location.reload();
       }else{
         console.log("false")
       }

@@ -13,6 +13,8 @@ export class TiendaComponent implements OnInit {
 
   productos: Array<any> = [];
 
+  spinner: boolean = true;
+
   constructor(public prodService : ProdService) {}
 
   obtenerCategorias(){
@@ -35,6 +37,7 @@ export class TiendaComponent implements OnInit {
     let url = "https://edi-iorio-back.herokuapp.com/productos/todos"
     this.prodService.productos(prod, url).subscribe( data => {
       this.productos = Object.values(data);
+      this.spinner = false;
     });
   }
   
