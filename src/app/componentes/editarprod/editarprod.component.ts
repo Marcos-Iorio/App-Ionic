@@ -28,9 +28,7 @@ export class EditarprodComponent implements OnInit {
     this.prodService.EditarProducto(producto).subscribe( data => {
       let datos = Object.values(data);
       if(datos[0] == true){
-        console.log(datos[1])
         this.router.navigateByUrl('/tienda');
-        window.location.reload();
       }else{
         console.log("false")
       }
