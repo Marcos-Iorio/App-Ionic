@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   mail: string | undefined;
   password: string;
 
+  enable: boolean = true;
+
   respuestaRe: string | undefined;
   respuestaLogin: string | undefined;
 
@@ -23,10 +25,7 @@ export class LoginComponent implements OnInit {
     
   login(){
       const user = {nombre: this.nombre, password: this.password};
-      
-      console.log(user);
       this.userService.login(user).subscribe( data => {
-        console.log(data);
         if(data['success'] == false){
           this.router.navigateByUrl('/login')
           this.respuestaLogin = data['message'];

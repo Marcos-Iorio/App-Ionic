@@ -21,7 +21,6 @@ export class RegistroComponent implements OnInit {
   
   registro(){
     const user = {nombre: this.nombre, password: this.password, mail: this.mail};
-    console.log(user)
     this.userService.registro(user).subscribe( data => {
       if(data['success'] == true){
         this.respuestaRe = data['message'];

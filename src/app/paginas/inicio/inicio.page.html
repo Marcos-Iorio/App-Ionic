@@ -1,22 +1,23 @@
 
 <ion-content>
     <section class="blue">
-      <h1>Nice Curves!</h1>
-      <p>A website is like a road. The more curves it has the more interesting it is.</p>
+      <video id="video-home" autoplay muted loop>
+        <source src="assets/video-inicio.mp4" srcset="" type="video/mp4">
+      </video>
       <div class="curve"></div>
     </section>
 
     <section class="white">
       <div class="titulo-white">Imprimí con potencia.</div>
-      <img src="assets/blob-haikei.svg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+      
+      <div id="wrapper-svg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+        <img src="assets/blob-haikei.svg" id="fondo-svg" alt="">
+        <img src="assets/replicator2-01_0.png" id="impresora" alt="">
+      </div>
+      <a id="boton-tienda" [routerLink]="['/tienda']"><button>Tienda</button></a>
     </section>
 
     <section class="dark">
-      <h1>Nice Curves!</h1>
-      <p>A website is like a road. The more curves it has the more interesting it is.</p>
-    </section>
-
-    <section class="red">
       <h1>Nice Curves!</h1>
       <p>A website is like a road. The more curves it has the more interesting it is.</p>
     </section>

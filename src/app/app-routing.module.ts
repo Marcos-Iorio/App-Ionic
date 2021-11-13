@@ -4,6 +4,7 @@ import { EditarprodComponent } from './componentes/editarprod/editarprod.compone
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { TiendaComponent } from './componentes/tienda/tienda.component';
+import { GuardAuthService } from './servicios/guard-auth.service';
 
 const routes: Routes = [
   {
@@ -17,8 +18,8 @@ const routes: Routes = [
   },
   {path: "login", component: LoginComponent},
   {path: "registro", component: RegistroComponent},
-  {path: "tienda", component: TiendaComponent},
-  {path: "tienda/editar/:id", component: EditarprodComponent},
+  {path: "tienda", component: TiendaComponent, canActivate: [GuardAuthService]},
+  {path: "tienda/editar/:id", component: EditarprodComponent, canActivate: [GuardAuthService]},
 
 ];
 

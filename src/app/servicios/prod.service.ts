@@ -36,4 +36,11 @@ export class ProdService {
     return this.http.put("https://edi-iorio-back.herokuapp.com/productos/editar", producto)
   }
 
+  getProductInfo(id: any){
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    return this.http.post("https://edi-iorio-back.herokuapp.com/productos/prodId", id)
+  }
+
 }

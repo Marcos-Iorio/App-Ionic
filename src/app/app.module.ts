@@ -15,9 +15,10 @@ import { TiendaComponent } from './componentes/tienda/tienda.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { EditarprodComponent } from './componentes/editarprod/editarprod.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { MostrarContrasenaPipe } from './pipes/mostrar-contrasena.pipe';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, LoginComponent, TiendaComponent, ProductosComponent, EditarprodComponent, FooterComponent],
+  declarations: [AppComponent, MenuComponent, LoginComponent, TiendaComponent, ProductosComponent, EditarprodComponent, FooterComponent, MostrarContrasenaPipe],
   entryComponents: [LoginComponent, TiendaComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, CommonModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -10,7 +10,7 @@ import { ProdService } from 'src/app/servicios/prod.service';
 })
 export class ProductosComponent implements OnInit {
 
-  @Input() productos: any[] = [];
+  @Input() productos = new Productos();
 
   valorProd: string | undefined;
 
@@ -33,5 +33,12 @@ export class ProductosComponent implements OnInit {
 
   ngOnInit() {}
 
+}
+
+class Productos {
+  idProd: any | undefined;
+  nombreProd: string | undefined;
+  stock: number | string;
+  precio: number | string;
 }
 
