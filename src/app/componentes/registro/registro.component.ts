@@ -10,9 +10,7 @@ import { UsuariosService } from 'src/app/servicios/usuarios.service';
 })
 export class RegistroComponent implements OnInit {
 
-  nombre: string;
-  mail: string | undefined;
-  password: string;
+   user = new Usuario;
 
   respuestaRe: string | undefined;
   respuestaLogin: string | undefined;
@@ -20,10 +18,11 @@ export class RegistroComponent implements OnInit {
   constructor(public userService: UsuariosService, public router: Router, public authService : AuthService) { }
   
   registro(){
-    const user = {nombre: this.nombre, password: this.password, mail: this.mail};
+    const user = {nombre: this.user.nombre, password: this.user.password, mail: this.user.mail};
     this.userService.registro(user).subscribe( data => {
       if(data['success'] == true){
         this.respuestaRe = data['message'];
+        this.router.navigateByUrl('/inicio');
       }else{
         this.respuestaRe = data['message'];
       }
@@ -32,4 +31,10 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit() {}
 
+}
+
+class Usuario{
+  nombre: string;
+  mail: string;
+  password: string;
 }

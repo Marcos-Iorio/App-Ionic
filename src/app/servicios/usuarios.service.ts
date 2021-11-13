@@ -21,5 +21,7 @@ export class UsuariosService {
     .set('content-type', 'application/json')
     .set('Access-Control-Allow-Origin', '*');
     return this.http.post("https://edi-iorio-back.herokuapp.com/registro/", user, {'headers': headers})
+    /* return this.http.post("http://localhost:8080/registro/", user, {'headers': headers}) */
+    
   }
 }
