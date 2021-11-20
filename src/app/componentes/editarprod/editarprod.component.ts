@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Producto } from 'src/app/entidades/producto';
 import { ProdService } from 'src/app/servicios/prod.service';
 
 @Component({
@@ -11,12 +12,7 @@ export class EditarprodComponent implements OnInit {
 
   sub: any | undefined;
 
-  //Datos nuevos
-  nombreProd: string | undefined;
-  stock: number | undefined
-  precio: number | undefined
-
-  producto = new Productos();
+  producto = new Producto();
 
 
   constructor(private _Activatedroute:ActivatedRoute, public router: Router, public prodService: ProdService) { }
@@ -31,15 +27,13 @@ export class EditarprodComponent implements OnInit {
 
 
   modificarProd(){
-    this.producto.nombreProd = this.nombreProd;
-    this.producto.stock = this.stock;
-    this.producto.precio = this.precio;
-    
+  
     const producto = {id: this.producto.idProd , nombre: this.producto.nombreProd, stock: this.producto.stock , precio: this.producto.precio}
     console.log(producto)
     this.prodService.EditarProducto(producto).subscribe( data => {
       let datos = Object.values(data);
       if(datos[0] == true){
+        console.log(datos['message'])
         this.router.navigateByUrl('/tienda');
       }else{
         console.log("false")
@@ -57,11 +51,4 @@ export class EditarprodComponent implements OnInit {
     })
   }
 
-}
-
-class Productos {
-  idProd: any | undefined;
-  nombreProd: string | undefined;
-  stock: number | string;
-  precio: number | string;
 }

@@ -17,9 +17,10 @@ import { EditarprodComponent } from './componentes/editarprod/editarprod.compone
 import { FooterComponent } from './componentes/footer/footer.component';
 import { MostrarContrasenaPipe } from './pipes/mostrar-contrasena.pipe';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { AgregarProductoComponent } from './componentes/agregar-producto/agregar-producto.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, LoginComponent, TiendaComponent, ProductosComponent, EditarprodComponent, FooterComponent, MostrarContrasenaPipe, RegistroComponent],
+  declarations: [AppComponent, MenuComponent, LoginComponent, TiendaComponent, ProductosComponent, EditarprodComponent, FooterComponent, MostrarContrasenaPipe, RegistroComponent, AgregarProductoComponent],
   entryComponents: [LoginComponent, TiendaComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, CommonModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

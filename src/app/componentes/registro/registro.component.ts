@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/entidades/usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
 
@@ -19,6 +20,7 @@ export class RegistroComponent implements OnInit {
   
   registro(){
     const user = {nombre: this.user.nombre, password: this.user.password, mail: this.user.mail};
+    console.log(user);
     this.userService.registro(user).subscribe( data => {
       if(data['success'] == true){
         this.respuestaRe = data['message'];
@@ -31,10 +33,4 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit() {}
 
-}
-
-class Usuario{
-  nombre: string;
-  mail: string;
-  password: string;
-}
+} 

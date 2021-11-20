@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/entidades/usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
 
@@ -8,23 +9,19 @@ import { UsuariosService } from 'src/app/servicios/usuarios.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
-  nombre: string;
-  mail: string | undefined;
-  password: string;
+export class LoginComponent implements OnInit { 
+
+ user = new Usuario;
 
   enable: boolean = true;
 
   respuestaRe: string | undefined;
   respuestaLogin: string | undefined;
 
-  constructor(public userService: UsuariosService, public router: Router, public authService : AuthService) {
-    this.nombre = "";
-    this.password = "";
-   }
+  constructor(public userService: UsuariosService, public router: Router, public authService : AuthService) {}
     
   login(){
-      const user = {nombre: this.nombre, password: this.password};
+      const user = {nombre: this.user.nombre, password: this.user.password};
       this.userService.login(user).subscribe( data => {
         if(data['success'] == false){
           this.router.navigateByUrl('/login')

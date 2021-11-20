@@ -1,0 +1,14 @@
+<div class="mod-prod">
+  <a [routerLink] = "['/tienda']"><ion-icon class="volver-atras" name="arrow-back-outline"></ion-icon></a>
+  <ion-label for="titulo" position="floating">Nombre del Producto:</ion-label>
+      <ion-input type="text" class="editar-input" [(ngModel)]="prod.nombreProd" name="titulo-producto" id="" placeholder="Nombre del producto"></ion-input><br>
+  <ion-label for="titulo" position="floating">Categoria:</ion-label>
+      <ion-input type="text" class="editar-input" [(ngModel)]="prod.categoria" name="categoria" id="" placeholder="Categoria"></ion-input><br>
+  <ion-label for="titulo" position="floating">Stock:</ion-label>
+      <ion-input type="number" class="editar-input" [(ngModel)]="prod.stock" name="stock" id="" placeholder="Stock"></ion-input><br>
+  <ion-label for="titulo">Precio:</ion-label>
+      <ion-input type="number" class="editar-input" [(ngModel)]="prod.precio" name="precio" id="" placeholder="Precio"></ion-input><br>
+
+  <ion-button type="submit"  (click)="agregarProd()">Agregar</ion-button>
+</div>
+

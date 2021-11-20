@@ -1,11 +1,11 @@
 <div class="mod-prod">
   <a [routerLink] = "['/tienda']"><ion-icon class="volver-atras" name="arrow-back-outline"></ion-icon></a>
   <ion-label for="titulo" position="floating">Nombre del Producto:</ion-label>
-      <ion-input type="text" class="editar-input" [(ngModel)]="nombreProd" name="titulo-producto" id="" placeholder={{producto.nombreProd}}></ion-input><br>
+      <ion-input type="text" class="editar-input" [(ngModel)]="producto.nombreProd" name="titulo-producto" id="" placeholder={{producto.nombreProd}}></ion-input><br>
   <ion-label for="titulo" position="floating">Stock:</ion-label>
-      <ion-input type="number" class="editar-input" [(ngModel)]="precio" name="titulo-producto" id="" placeholder={{producto.stock}}></ion-input><br>
+      <ion-input type="number" class="editar-input" [(ngModel)]="producto.precio" name="titulo-producto" id="" placeholder={{producto.stock}}></ion-input><br>
   <ion-label for="titulo">Precio:</ion-label>
-      <ion-input type="number" class="editar-input" [(ngModel)]="stock" name="titulo-producto" id="" placeholder="{{producto.precio}}"></ion-input><br>
+      <ion-input type="number" class="editar-input" [(ngModel)]="producto.stock" name="titulo-producto" id="" placeholder="{{producto.precio}}"></ion-input><br>
 
   <ion-button type="submit" (click)="modificarProd()">Modificar</ion-button>
 </div>

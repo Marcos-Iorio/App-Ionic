@@ -5,11 +5,13 @@
   </ion-select-option>
 </ion-select>
 
-<!-- <div class="boton-agregar">
-<ion-button id="boton-agregar" aria-label="Example icon button with a bookmark icon">
-  <mat-icon>add</mat-icon>
-</ion-button>
-</div> -->
+<div class="boton-agregar">
+  <a [routerLink]="['agregar']">
+    <button id="boton-agregar"  aria-label="Example icon button with a bookmark icon">
+      <ion-icon id="icono-agregar" name="add-outline"></ion-icon>
+    </button>
+  </a>
+</div>
 
 <app-productos [productos]="productos"></app-productos>
 <div *ngIf="spinner == true" class="spinner-container">
