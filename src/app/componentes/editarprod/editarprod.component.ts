@@ -29,7 +29,6 @@ export class EditarprodComponent implements OnInit {
   modificarProd(){
   
     const producto = {id: this.producto.idProd , nombre: this.producto.nombreProd, stock: this.producto.stock , precio: this.producto.precio}
-    console.log(producto)
     this.prodService.EditarProducto(producto).subscribe( data => {
       let datos = Object.values(data);
       if(datos[0] == true){
