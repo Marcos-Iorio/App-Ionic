@@ -48,7 +48,7 @@ export class TiendaComponent implements OnInit {
       this.productos = Object.values(data);
     });
 
-
+    
     setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();
