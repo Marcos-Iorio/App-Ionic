@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Producto } from 'src/app/entidades/producto';
 import { ProdService } from 'src/app/servicios/prod.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ProdService } from 'src/app/servicios/prod.service';
 })
 export class ProductosComponent implements OnInit {
 
-  @Input() productos = new Productos();
+  @Input() productos = new Producto();
 
   valorProd: string | undefined;
 
@@ -35,10 +36,4 @@ export class ProductosComponent implements OnInit {
 
 }
 
-class Productos {
-  idProd: any | undefined;
-  nombreProd: string | undefined;
-  stock: number | string;
-  precio: number | string;
-}
 

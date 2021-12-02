@@ -41,6 +41,19 @@ export class TiendaComponent implements OnInit {
     });
   }
   
+  doRefresh(event) {
+    const prod = {categoria : '0'};
+    let url = "https://edi-iorio-back.herokuapp.com/productos/todos"
+    this.prodService.productos(prod, url).subscribe( data => {
+      this.productos = Object.values(data);
+    });
+
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
 
   ngOnInit(): void {
     this.obtenerCategorias();
